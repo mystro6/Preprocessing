@@ -30,9 +30,15 @@ public class Preprocess {
         }
     }
 
-    public String fixSentence(String[] input){
+    public String fixSentenceLangs(String[] input){
         HashMap<String,String> languages = detectLanguages(input);
         String fixedSentence = fixWords(input,languages);
+
+        return fixedSentence;
+    }
+
+    public String fixSentence(String[] input){
+        String fixedSentence = fixWords(input,null);
 
         return fixedSentence;
     }
@@ -72,30 +78,44 @@ public class Preprocess {
         StringBuilder builder = new StringBuilder();
         String[] fixedWords = words;
 
-        for(String word:words){
-            System.out.println(word + " -> " + languages.get(word));
-        }
-        for(int i = 0; i < words.length;i++){
+        if(languages!=null){
+            for(String word:words){
+                System.out.println(word + " -> " + languages.get(word));
+            }
+            for(int i = 0; i < words.length;i++){
 
-            if((languages.get(words[i]).equalsIgnoreCase("tr"))){
+                if((languages.get(words[i]).equalsIgnoreCase("tr"))){
                /* Boolean check = spellChecker.check(words[i]);
                 System.out.println(words[i] + " -> " + check);*/
 
-                if(!spellChecker.check(words[i])){
-                    wrongWords.add(words[i]);
+                    if(!spellChecker.check(words[i])){
+                        wrongWords.add(words[i]);
+                    }
                 }
             }
-        }
+            for (int i = 0;i<words.length;i++){
 
-        for (int i = 0;i<words.length;i++){
-
-            //System.out.println(s + " -> " + spellChecker.suggestForWord(s));
-            if(wrongWords.contains(words[i])){
-                fixedWords[i] = spellChecker.suggestForWord(fixedWords[i]).get(0);
+                //System.out.println(s + " -> " + spellChecker.suggestForWord(s));
+                if(wrongWords.contains(words[i])){
+                    fixedWords[i] = spellChecker.suggestForWord(fixedWords[i]).get(0);
+                }
+                builder.append(fixedWords[i]);
+                builder.append(" ");
             }
-            builder.append(fixedWords[i]);
-            builder.append(" ");
         }
+        else{
+            for(int i = 0; i < words.length;i++){
+                if(!spellChecker.check(words[i])){
+                    fixedWords[i] = spellChecker.suggestForWord(words[i]).get(0);
+                }
+                builder.append(fixedWords[i]);
+                builder.append(" ");
+            }
+
+        }
+
+
+
         String fixedString = builder.toString();
 
         return fixedString;

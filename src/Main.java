@@ -8,6 +8,11 @@ public class Main {
         input = input.replaceAll("\\p{P}", "");         //REMOVE ALL PUNCTION
         String[] words = input.split(" ");
         System.out.println(input);
+        System.out.println("Process");
         System.out.println(pre.fixSentence(words));
+        System.out.println("Process Lang");
+        System.out.println(pre.fixSentenceLangs(words));
+        System.out.println();
+
     }
 }
