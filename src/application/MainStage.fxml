@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainStageController">
+  <tabs>
+    <Tab text="Enter Tweet">
+         <content>
+            <Pane>
+               <children>
+                  <ScrollPane layoutX="386.0" layoutY="14.0" prefHeight="300.0" prefWidth="200.0">
+                     <content>
+                        <VBox spacing="10.0">
+                           <children>
+                              <CheckBox fx:id="cbet01" mnemonicParsing="false" text="Abbreviation" />
+                              <CheckBox fx:id="cbet02" mnemonicParsing="false" text="Space Tab" />
+                              <CheckBox fx:id="cbet03" mnemonicParsing="false" text="New Line" />
+                              <CheckBox fx:id="cbet04" mnemonicParsing="false" text="Time" />
+                              <CheckBox fx:id="cbet05" mnemonicParsing="false" text="Date" />
+                              <CheckBox fx:id="cbet06" mnemonicParsing="false" text="Percent Numeral" />
+                              <CheckBox fx:id="cbet07" mnemonicParsing="false" text="Number" />
+                              <CheckBox fx:id="cbet08" mnemonicParsing="false" text="URL" />
+                              <CheckBox fx:id="cbet09" mnemonicParsing="false" text="Email" />
+                              <CheckBox fx:id="cbet10" mnemonicParsing="false" text="HashTag" />
+                              <CheckBox fx:id="cbet11" mnemonicParsing="false" text="Mention" />
+                              <CheckBox fx:id="cbet12" mnemonicParsing="false" text="Emoticon" />
+                              <CheckBox fx:id="cbet13" mnemonicParsing="false" text="Roman Numeral" />
+                              <CheckBox fx:id="cbet14" mnemonicParsing="false" text="Abbreviation with Dots" />
+                              <CheckBox fx:id="cbet15" mnemonicParsing="false" text="Word" />
+                              <CheckBox fx:id="cbet16" mnemonicParsing="false" text="Word with Apostrophe" />
+                              <CheckBox fx:id="cbet17" mnemonicParsing="false" text="Punctuation" />
+                              <CheckBox fx:id="cbet18" mnemonicParsing="false" text="Unknown Word" />
+                              <CheckBox fx:id="cbet19" mnemonicParsing="false" text="Unknown" />
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </VBox>
+                     </content>
+                  </ScrollPane>
+                  <Button fx:id="btnetstart" layoutX="545.0" layoutY="332.0" mnemonicParsing="false" onAction="#BtnETStart" text="Start" />
+                  <VBox layoutX="14.0" layoutY="13.0" prefHeight="345.0" spacing="10.0">
+                     <children>
+                        <Label text="Tweet Input:" />
+                        <TextArea fx:id="txttweet" prefWidth="365.0" />
+                        <Label text="Tweet Output:" />
+                        <TextArea fx:id="txtoutput" prefWidth="365.0" />
+                     </children>
+                  </VBox>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </Pane>
+         </content>
+    </Tab>
+      <Tab text="Read from File">
+         <content>
+            <Pane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <VBox layoutX="14.0" layoutY="14.0" spacing="10.0">
+                     <children>
+                        <Label text="Read from:" />
+                        <HBox spacing="10.0">
+                           <children>
+                              <TextField fx:id="txtread" prefWidth="288.0" />
+                              <Button fx:id="btnopen" mnemonicParsing="false" onAction="#BtnOpen" text="Open File" />
+                           </children>
+                        </HBox>
+                        <Label text="Write to:" />
+                        <HBox spacing="10.0">
+                           <children>
+                              <TextField fx:id="txtwrite" prefWidth="288.0" />
+                              <Button fx:id="btnsave" mnemonicParsing="false" onAction="#BtnSave" prefWidth="67.0" text="Save File" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <ScrollPane layoutX="386.0" layoutY="14.0" prefHeight="300.0" prefWidth="200.0">
+                     <content>
+                        <VBox spacing="10.0">
+                           <children>
+                              <CheckBox fx:id="cbrf01" mnemonicParsing="false" text="Abbreviation" />
+                              <CheckBox fx:id="cbrf02" mnemonicParsing="false" text="Space Tab" />
+                              <CheckBox fx:id="cbrf03" mnemonicParsing="false" text="New Line" />
+                              <CheckBox fx:id="cbrf04" mnemonicParsing="false" text="Time" />
+                              <CheckBox fx:id="cbrf05" mnemonicParsing="false" text="Date" />
+                              <CheckBox fx:id="cbrf06" mnemonicParsing="false" text="Percent Numeral" />
+                              <CheckBox fx:id="cbrf07" mnemonicParsing="false" text="Number" />
+                              <CheckBox fx:id="cbrf08" mnemonicParsing="false" text="URL" />
+                              <CheckBox fx:id="cbrf09" mnemonicParsing="false" text="Email" />
+                              <CheckBox fx:id="cbrf10" mnemonicParsing="false" text="HashTag" />
+                              <CheckBox fx:id="cbrf11" mnemonicParsing="false" text="Mention" />
+                              <CheckBox fx:id="cbrf12" mnemonicParsing="false" text="Emoticon" />
+                              <CheckBox fx:id="cbrf13" mnemonicParsing="false" text="Roman Numeral" />
+                              <CheckBox fx:id="cbrf14" mnemonicParsing="false" text="Abbreviation with Dots" />
+                              <CheckBox fx:id="cbrf15" mnemonicParsing="false" text="Word" />
+                              <CheckBox fx:id="cbrf16" mnemonicParsing="false" text="Word with Apostrophe" />
+                              <CheckBox fx:id="cbrf17" mnemonicParsing="false" text="Punctuation" />
+                              <CheckBox fx:id="cbrf18" mnemonicParsing="false" text="Unknown Word" />
+                              <CheckBox fx:id="cbrf19" mnemonicParsing="false" text="Unknown" />
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </VBox>
+                     </content>
+                  </ScrollPane>
+                  <Button fx:id="btnrfstart" layoutX="545.0" layoutY="332.0" mnemonicParsing="false" onAction="#BtnRFStart" text="Start" />
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding></Pane>
+         </content>
+      </Tab>
+      <Tab text="Read from Database">
+         <content>
+            <Pane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <VBox layoutX="14.0" layoutY="14.0" spacing="10.0">
+                     <children>
+                        <HBox alignment="CENTER" spacing="10.0">
+                           <children>
+                              <Label text="User Name:" />
+                              <TextField fx:id="txtusername" prefWidth="293.0" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" spacing="20.0">
+                           <children>
+                              <Label text="Password:" />
+                              <PasswordField fx:id="txtpassword" prefWidth="292.0" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" spacing="10.0">
+                           <children>
+                              <Label text="Reading TB:" />
+                              <TextField fx:id="txtreaddb" prefWidth="290.0" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" spacing="5.0">
+                           <children>
+                              <Label text="Writeting TB:" />
+                              <TextField fx:id="txtwritedb" prefWidth="290.0" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <ScrollPane layoutX="386.0" layoutY="14.0" prefHeight="300.0" prefWidth="200.0">
+                     <content>
+                        <VBox spacing="10.0">
+                           <children>
+                              <CheckBox fx:id="cbrd01" mnemonicParsing="false" text="Abbreviation" />
+                              <CheckBox fx:id="cbrd02" mnemonicParsing="false" text="Space Tab" />
+                              <CheckBox fx:id="cbrd03" mnemonicParsing="false" text="New Line" />
+                              <CheckBox fx:id="cbrd04" mnemonicParsing="false" text="Time" />
+                              <CheckBox fx:id="cbrd05" mnemonicParsing="false" text="Date" />
+                              <CheckBox fx:id="cbrd06" mnemonicParsing="false" text="Percent Numeral" />
+                              <CheckBox fx:id="cbrd07" mnemonicParsing="false" text="Number" />
+                              <CheckBox fx:id="cbrd08" mnemonicParsing="false" text="URL" />
+                              <CheckBox fx:id="cbrd09" mnemonicParsing="false" text="Email" />
+                              <CheckBox fx:id="cbrd10" mnemonicParsing="false" text="HashTag" />
+                              <CheckBox fx:id="cbrd11" mnemonicParsing="false" text="Mention" />
+                              <CheckBox fx:id="cbrd12" mnemonicParsing="false" text="Emoticon" />
+                              <CheckBox fx:id="cbrd13" mnemonicParsing="false" text="Roman Numeral" />
+                              <CheckBox fx:id="cbrd14" mnemonicParsing="false" text="Abbreviation with Dots" />
+                              <CheckBox fx:id="cbrd15" mnemonicParsing="false" text="Word" />
+                              <CheckBox fx:id="cbrd16" mnemonicParsing="false" text="Word with Apostrophe" />
+                              <CheckBox fx:id="cbrd17" mnemonicParsing="false" text="Punctuation" />
+                              <CheckBox fx:id="cbrd18" mnemonicParsing="false" text="Unknown Word" />
+                              <CheckBox fx:id="cbrd19" mnemonicParsing="false" text="Unknown" />
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </VBox>
+                     </content>
+                  </ScrollPane>
+                  <Button fx:id="btnrdstart" layoutX="545.0" layoutY="332.0" mnemonicParsing="false" text="Start" />
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding></Pane>
+         </content>
+      </Tab>
+  </tabs>
+</TabPane>
