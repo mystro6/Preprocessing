@@ -5,22 +5,24 @@
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 
-<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainStageController">
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="610.0" prefWidth="800.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainStageController">
   <tabs>
     <Tab text="Enter Tweet">
          <content>
             <Pane>
                <children>
-                  <ScrollPane layoutX="386.0" layoutY="14.0" prefHeight="300.0" prefWidth="200.0">
+                  <ScrollPane layoutX="586.0" layoutY="14.0" prefHeight="550.0" prefWidth="200.0">
                      <content>
                         <VBox spacing="10.0">
                            <children>
@@ -50,15 +52,35 @@
                         </VBox>
                      </content>
                   </ScrollPane>
-                  <Button fx:id="btnetstart" layoutX="545.0" layoutY="332.0" mnemonicParsing="false" onAction="#BtnETStart" text="Start" />
-                  <VBox layoutX="14.0" layoutY="13.0" prefHeight="345.0" spacing="10.0">
+                  <Button fx:id="btnetstart" layoutX="464.0" layoutY="470.0" mnemonicParsing="false" onAction="#BtnETStart" prefHeight="50.0" prefWidth="100.0" text="Start" />
+                  <VBox layoutX="14.0" layoutY="14.0" spacing="10.0">
                      <children>
                         <Label text="Tweet Input:" />
-                        <TextArea fx:id="txttweet" prefWidth="365.0" />
+                        <TextArea fx:id="txttweet" prefHeight="188.0" prefWidth="550.0" />
                         <Label text="Tweet Output:" />
-                        <TextArea fx:id="txtoutput" prefWidth="365.0" />
+                        <TextArea fx:id="txtoutput" editable="false" prefHeight="188.0" prefWidth="550.0" />
                      </children>
                   </VBox>
+                  <HBox layoutX="14.0" layoutY="470.0" spacing="20.0">
+                     <children>
+                        <VBox spacing="10.0">
+                           <children>
+                              <CheckBox fx:id="cbeten" mnemonicParsing="false" text="With Encoding" />
+                              <CheckBox fx:id="cbetid" mnemonicParsing="false" text="With Language ID" />
+                           </children>
+                        </VBox>
+                        <VBox spacing="10.0">
+                           <children>
+                              <RadioButton fx:id="rbetml" mnemonicParsing="false" text="Machine Learning">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="LXML" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton fx:id="rbetlx" mnemonicParsing="false" text="Lexicon" toggleGroup="$LXML" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
                </children>
                <padding>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
@@ -70,25 +92,7 @@
          <content>
             <Pane prefHeight="200.0" prefWidth="200.0">
                <children>
-                  <VBox layoutX="14.0" layoutY="14.0" spacing="10.0">
-                     <children>
-                        <Label text="Read from:" />
-                        <HBox spacing="10.0">
-                           <children>
-                              <TextField fx:id="txtread" prefWidth="288.0" />
-                              <Button fx:id="btnopen" mnemonicParsing="false" onAction="#BtnOpen" text="Open File" />
-                           </children>
-                        </HBox>
-                        <Label text="Write to:" />
-                        <HBox spacing="10.0">
-                           <children>
-                              <TextField fx:id="txtwrite" prefWidth="288.0" />
-                              <Button fx:id="btnsave" mnemonicParsing="false" onAction="#BtnSave" prefWidth="67.0" text="Save File" />
-                           </children>
-                        </HBox>
-                     </children>
-                  </VBox>
-                  <ScrollPane layoutX="386.0" layoutY="14.0" prefHeight="300.0" prefWidth="200.0">
+                  <ScrollPane layoutX="586.0" layoutY="14.0" prefHeight="550.0" prefWidth="200.0">
                      <content>
                         <VBox spacing="10.0">
                            <children>
@@ -118,7 +122,49 @@
                         </VBox>
                      </content>
                   </ScrollPane>
-                  <Button fx:id="btnrfstart" layoutX="545.0" layoutY="332.0" mnemonicParsing="false" onAction="#BtnRFStart" text="Start" />
+                  <Button fx:id="btnrfstart" layoutX="464.0" layoutY="470.0" mnemonicParsing="false" onAction="#BtnRFStart" prefHeight="50.0" prefWidth="100.0" text="Start" />
+                  <HBox layoutX="14.0" layoutY="470.0" spacing="20.0">
+                     <children>
+                        <VBox spacing="10.0">
+                           <children>
+                              <CheckBox fx:id="cbrfen" mnemonicParsing="false" text="With Encoding" />
+                              <CheckBox fx:id="cbrfid" mnemonicParsing="false" text="With Language ID" />
+                           </children>
+                        </VBox>
+                        <VBox spacing="10.0">
+                           <children>
+                              <RadioButton fx:id="rbrfml" mnemonicParsing="false" text="Machine Learning" toggleGroup="$LXML" />
+                              <RadioButton fx:id="rbrflx" mnemonicParsing="false" text="Lexicon" toggleGroup="$LXML" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <HBox layoutX="14.0" layoutY="14.0" spacing="5.0">
+                     <children>
+                        <VBox alignment="TOP_RIGHT" spacing="20.0">
+                           <children>
+                              <Label text="Read from file:" />
+                              <Label text="Write to file:" />
+                           </children>
+                        </VBox>
+                        <VBox spacing="10.0">
+                           <children>
+                              <HBox spacing="10.0">
+                                 <children>
+                                    <TextField fx:id="txtread" prefWidth="360.0" />
+                                    <Button fx:id="btnopen" mnemonicParsing="false" onAction="#BtnOpen" text="Open File" />
+                                 </children>
+                              </HBox>
+                              <HBox spacing="10.0">
+                                 <children>
+                                    <TextField fx:id="txtwrite" prefWidth="360.0" />
+                                    <Button fx:id="btnsave" mnemonicParsing="false" onAction="#BtnSave" prefWidth="80.0" text="Save File" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
                </children>
                <padding>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
@@ -129,35 +175,7 @@
          <content>
             <Pane prefHeight="200.0" prefWidth="200.0">
                <children>
-                  <VBox layoutX="14.0" layoutY="14.0" spacing="10.0">
-                     <children>
-                        <HBox alignment="CENTER" spacing="10.0">
-                           <children>
-                              <Label text="User Name:" />
-                              <TextField fx:id="txtusername" prefWidth="293.0" />
-                           </children>
-                        </HBox>
-                        <HBox alignment="CENTER" spacing="20.0">
-                           <children>
-                              <Label text="Password:" />
-                              <PasswordField fx:id="txtpassword" prefWidth="292.0" />
-                           </children>
-                        </HBox>
-                        <HBox alignment="CENTER" spacing="10.0">
-                           <children>
-                              <Label text="Reading TB:" />
-                              <TextField fx:id="txtreaddb" prefWidth="290.0" />
-                           </children>
-                        </HBox>
-                        <HBox alignment="CENTER" spacing="5.0">
-                           <children>
-                              <Label text="Writeting TB:" />
-                              <TextField fx:id="txtwritedb" prefWidth="290.0" />
-                           </children>
-                        </HBox>
-                     </children>
-                  </VBox>
-                  <ScrollPane layoutX="386.0" layoutY="14.0" prefHeight="300.0" prefWidth="200.0">
+                  <ScrollPane layoutX="586.0" layoutY="14.0" prefHeight="550.0" prefWidth="200.0">
                      <content>
                         <VBox spacing="10.0">
                            <children>
@@ -187,7 +205,43 @@
                         </VBox>
                      </content>
                   </ScrollPane>
-                  <Button fx:id="btnrdstart" layoutX="545.0" layoutY="332.0" mnemonicParsing="false" text="Start" />
+                  <Button fx:id="btnrdstart" layoutX="464.0" layoutY="470.0" mnemonicParsing="false" onAction="#BtnRDStart" prefHeight="50.0" prefWidth="100.0" text="Start" />
+                  <HBox layoutX="14.0" layoutY="470.0" spacing="20.0">
+                     <children>
+                        <VBox spacing="10.0">
+                           <children>
+                              <CheckBox fx:id="cbrden" mnemonicParsing="false" text="With Encoding" />
+                              <CheckBox fx:id="cbrdid" mnemonicParsing="false" text="With Language ID" />
+                           </children>
+                        </VBox>
+                        <VBox spacing="10.0">
+                           <children>
+                              <RadioButton fx:id="rbrdml" mnemonicParsing="false" text="Machine Learning" toggleGroup="$LXML" />
+                              <RadioButton fx:id="rbrdlx" mnemonicParsing="false" text="Lexicon" toggleGroup="$LXML" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <HBox layoutX="14.0" layoutY="14.0" spacing="5.0">
+                     <children>
+                        <VBox alignment="TOP_RIGHT" spacing="20.0">
+                           <children>
+                              <Label text="User Name:" />
+                              <Label text="Password:" />
+                              <Label text="Read DB:" />
+                              <Label text="Write DB:" />
+                           </children>
+                        </VBox>
+                        <VBox spacing="10.0">
+                           <children>
+                              <TextField fx:id="txtusername" prefWidth="475.0" />
+                              <PasswordField fx:id="txtpassword" prefWidth="475.0" />
+                              <TextField fx:id="txtreaddb" prefWidth="475.0" />
+                              <TextField fx:id="txtwritedb" prefWidth="475.0" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
                </children>
                <padding>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />

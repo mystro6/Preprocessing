@@ -1,3 +1,8 @@
+/*
+ * Ercan Tunç Güçlü & Ömer Aydın
+ * GUI application for preprocessing
+ */
+
 package application;
 	
 import javafx.application.Application;
@@ -17,15 +22,17 @@ public class Main extends Application
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			primaryStage.setScene(scene);
 			primaryStage.setTitle("Zemberek GUI");
+			primaryStage.setResizable(false);
 			primaryStage.show();
-		} 
+		}
 		catch(Exception ex)
 		{
-			System.err.println(ex);
+			ErrorStage.ShowError(ex);
 		}
 	}
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) 
+	{
 		launch(args);
 	}
 }
